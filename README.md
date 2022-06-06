@@ -1,5 +1,7 @@
 # santa bypass poc
 
+See my [blog post](https://blog.coffinsec.com/research/2019/01/08/OSX-naughtiness-bypassing-santa.html) here for a full walkthrough.
+
 This PoC uses the concept of library injection but without the need for an injectable binary. Instead, the library is loaded using Python's `ctypes` module. The library uses code taken from [prior research](https://threatvector.cylance.com/en_us/home/running-executables-on-macos-from-memory.html) by Stephanie Archibald that was slightly modified to work in this context. Put together, this allows me to execute Mach-O binaries without Santa knowing. The PoC code below shows two ways this can be used. 
 
 
